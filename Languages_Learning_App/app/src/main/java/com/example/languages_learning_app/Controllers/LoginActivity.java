@@ -167,6 +167,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
                                 return;
                             }
+
+                            if (rbManager.isChecked()){
+                                startActivity(new Intent(LoginActivity.this, ManagerMainActivity.class));
+                                return;
+                            }
+
                             if (rbTrainee.isChecked()){
                                 startActivity(new Intent(LoginActivity.this, ChooseLanguageActivity.class));
                                 return;
