@@ -164,16 +164,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     if(Common.user != null){
                         if (Common.user.getRole().equals(Common.RoleAdmin)) {
                             if (rbAdmin.isChecked()) {
+                                Common.role = Common.RoleAdmin;
                                 startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
                                 return;
                             }
 
                             if (rbManager.isChecked()){
-                                startActivity(new Intent(LoginActivity.this, ManagerMainActivity.class));
+                                Common.role = Common.RoleManager;
+                                startActivity(new Intent(LoginActivity.this, ChooseLanguageActivity.class));
                                 return;
                             }
 
                             if (rbTrainee.isChecked()){
+                                Common.role = Common.RoleTrainee;
                                 startActivity(new Intent(LoginActivity.this, ChooseLanguageActivity.class));
                                 return;
                             }

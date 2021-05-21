@@ -36,6 +36,9 @@ public class ManagerMainActivity extends AppCompatActivity {
                         case R.id.nav_lesson:
                             selectedFragment = new ManagerLessonFragment();
                             break;
+                        case R.id.nav_word:
+                            selectedFragment = new ManagerWordFragment();
+                            break;
                         case R.id.nav_practice:
                             selectedFragment = new ManagerPracticeFragment();
                             break;

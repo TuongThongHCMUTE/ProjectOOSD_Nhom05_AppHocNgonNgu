@@ -5,6 +5,10 @@
         android:icon="@drawable/ic_baseline_language_24"
         android:title="@string/vn_lesson" />
     <item
+        android:id="@+id/nav_word"
+        android:icon="@drawable/ic_baseline_supervisor_account_24"
+        android:title="@string/vn_words" />
+    <item
         android:id="@+id/nav_practice"
         android:icon="@drawable/ic_baseline_supervisor_account_24"
         android:title="@string/vn_practice" />
