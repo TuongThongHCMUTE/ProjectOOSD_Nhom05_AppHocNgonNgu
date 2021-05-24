@@ -1,6 +1,6 @@
-package com.example.languages_learning_app.DAO;
+package com.example.languages_learning_app.Models;
 
-public class VocabMan {
+public class ContentWordItemMan {
     private Integer level;
     private Integer vid;
     private String vword;
@@ -47,7 +47,7 @@ public class VocabMan {
         this.vmean = vmean;
     }
 
-    public VocabMan(Integer level, Integer vid, String vword, String vspelling, String vmean) {
+    public ContentWordItemMan(Integer level, Integer vid, String vword, String vspelling, String vmean) {
         this.level = level;
         this.vid = vid;
         this.vword = vword;
@@ -55,6 +55,6 @@ public class VocabMan {
         this.vmean = vmean;
     }
 
-    public VocabMan() {
+    public ContentWordItemMan() {
     }
 }
