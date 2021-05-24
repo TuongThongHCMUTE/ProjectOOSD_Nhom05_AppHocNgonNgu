@@ -15,18 +15,28 @@
         android:layout_weight="1"
         android:text="Lesson: " />
 
-    <TextView
-        android:id="@+id/textViewNameLesson"
+    <EditText
+        android:id="@+id/editTextNameLesson"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Lesson's name: " />
 
-    <TextView
-        android:id="@+id/textViewContentLesson"
+    <EditText
+        android:id="@+id/editTextContentLesson"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="18"
-        android:text="Hello, I'm David" />
+        android:layout_weight="17"
+        android:text="Hello.\nI'm david.\nNice to meet you!"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Save" />
 
 </LinearLayout>

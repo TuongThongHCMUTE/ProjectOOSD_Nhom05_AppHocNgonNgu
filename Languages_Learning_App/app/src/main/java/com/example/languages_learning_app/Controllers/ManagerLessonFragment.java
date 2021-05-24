@@ -54,7 +54,8 @@ public class ManagerLessonFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ItemLessonMan itlm = (ItemLessonMan) lessonListViewAdapter.getItem(position);
-                Toast.makeText(getContext(), "Click on Lesson: " + itlm.getIdlesson(), Toast.LENGTH_SHORT).show();
+                // show Content_Lesson to edit
+                Toast.makeText(getContext(), "Clicked on Lesson: " + itlm.getIdlesson(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -63,7 +64,7 @@ public class ManagerLessonFragment extends Fragment {
         buttonnaddlesson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // add blank lesson to database
             }
         });
 

@@ -7,8 +7,6 @@ public class ContentLessonItemMan {
 
     private String contentlesson;
 
-    private Integer lang;   // id of language
-
     private String manageruser; // username of lesson's manager
 
     private Integer activestate;
@@ -37,14 +35,6 @@ public class ContentLessonItemMan {
         this.contentlesson = contentlesson;
     }
 
-    public Integer getLang() {
-        return lang;
-    }
-
-    public void setLang(Integer lang) {
-        this.lang = lang;
-    }
-
     public String getManageruser() {
         return manageruser;
     }
@@ -61,11 +51,10 @@ public class ContentLessonItemMan {
         this.activestate = activestate;
     }
 
-    public ContentLessonItemMan(Integer idlesson, String namelesson, String contentlesson, Integer lang, String manageruser, Integer activestate) {
+    public ContentLessonItemMan(Integer idlesson, String namelesson, String contentlesson, String manageruser, Integer activestate) {
         this.idlesson = idlesson;
         this.namelesson = namelesson;
         this.contentlesson = contentlesson;
-        this.lang = lang;
         this.manageruser = manageruser;
         this.activestate = activestate;
     }
