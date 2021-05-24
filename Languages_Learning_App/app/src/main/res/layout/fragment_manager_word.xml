@@ -10,5 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
+    <ListView
+        android:id="@+id/listviewLesson"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btnAddLesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Word"
+        android:translationX="285dp"
+        android:translationY="680dp" />
 
 </FrameLayout>
