@@ -1,22 +1,13 @@
 package com.example.languages_learning_app.DAO;
 
-import com.example.languages_learning_app.Models.ContentLessonItemMan;
+import com.example.languages_learning_app.DTO.Language;
+import com.example.languages_learning_app.DTO.Lesson;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 
-public class LessonDAO {
+public class LessonDAO<changeIsActivedLanguage> {
     String path;
     DatabaseReference mDatabase;
-    private Integer languageid;
-
-    public Integer getLanguageid() {
-        return languageid;
-    }
-
-    public void setLanguageid(Integer languageid) {
-        this.languageid = languageid;
-    }
 
     private static LessonDAO instance;
 
@@ -26,22 +17,31 @@ public class LessonDAO {
         return instance;
     }
 
-    public static void setInstance(LessonDAO instance) { LessonDAO.instance = instance; }
+    public static void setInstance(LessonDAO instance) {
+        LessonDAO.instance = instance;
+    }
 
-    public LessonDAO() { path = "Language_Lesson/" + languageid + "/lesson_s/"; }
+    public LessonDAO(){
+        path = "Lessons";
+    }
 
-    public ContentLessonItemMan getLessonValue(Integer lessonordernumber) {
-        path = path + lessonordernumber;
+    public void setLessonValue(Lesson lesson){
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(path).child(String.valueOf(lesson.getId())).setValue(lesson);
+    }
 
-        ContentLessonItemMan clim = new ContentLessonItemMan();
+    public boolean deleteLesson(int id) {
+        try {
+            mDatabase = FirebaseDatabase.getInstance().getReference();
+            mDatabase.child(path).child(String.valueOf(id)).removeValue();
+            return true;
+        } catch (Error error){
+            return false;
+        }
+    }
 
-        Query query = mDatabase.child(path);
-
-        ContentLessonItemMan tmpclim = new ContentLessonItemMan();
-
-        // Put data to tmpclim
-
-        return tmpclim;
+    public void changeStatusLesson(Lesson lesson){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(path).child(String.valueOf(lesson.getId())).child("status").setValue(!lesson.isStatus());
     }
 }

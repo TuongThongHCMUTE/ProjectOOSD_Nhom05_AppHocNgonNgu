@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Languages_Learning_App">
-        <activity android:name=".Controllers.Content_Lesson" />
         <activity android:name=".Controllers.ManagerMainActivity" />
         <activity android:name=".Controllers.ChangePasswordActivity" />
         <activity android:name=".Controllers.AdminMainActivity" />

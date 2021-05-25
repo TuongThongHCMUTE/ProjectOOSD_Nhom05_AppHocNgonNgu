@@ -123,15 +123,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     if(user.isEmailVerified()){
 
                         chooseRole(user.getUid());
-                        // redirect to user profile
-                        /*
-                        if(rbAdmin.isChecked()){
-                            startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
-                        }
-
-                        if(rbTrainee.isChecked()){
-                            startActivity(new Intent(LoginActivity.this, ChooseLanguageActivity.class));
-                        }*/
                     }
                     else{
                         user.sendEmailVerification();
@@ -181,8 +172,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 return;
                             }
                         }
+                        if (Common.user.getRole().equals(Common.RoleManager)) {
+                            if (rbManager.isChecked()){
+                                Common.role = Common.RoleManager;
+                                startActivity(new Intent(LoginActivity.this, ChooseLanguageActivity.class));
+                                return;
+                            }
+                            if (rbTrainee.isChecked()){
+                                Common.role = Common.RoleTrainee;
+                                startActivity(new Intent(LoginActivity.this, ChooseLanguageActivity.class));
+                                return;
+                            }
+                        }
+
                         if (Common.user.getRole().equals(Common.RoleTrainee)) {
                             if (rbTrainee.isChecked()){
+                                Common.role = Common.RoleTrainee;
                                 startActivity(new Intent(LoginActivity.this, ChooseLanguageActivity.class));
                                 return;
                             }
