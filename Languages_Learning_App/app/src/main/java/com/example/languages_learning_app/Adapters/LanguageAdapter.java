@@ -1,22 +1,20 @@
 package com.example.languages_learning_app.Adapters;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.languages_learning_app.Common.Common;
 import com.example.languages_learning_app.DTO.Language;
 import com.example.languages_learning_app.R;
 
@@ -26,6 +24,7 @@ import java.util.ArrayList;
 public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHolder>{
     Context context;
     ArrayList<Language> listLanguage;
+    int imageLanguage;
 
     private RecyclerViewClickListener listener;
 
@@ -39,7 +38,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_language, parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_language, parent,false);
 
         return new ViewHolder(view);
     }
@@ -48,9 +47,11 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
     public void onBindViewHolder(@NonNull LanguageAdapter.ViewHolder holder, int position) {
         Language language = listLanguage.get(position);
 
+        imageLanguage = Common.getFlagLanguage(language.getName());
+
+        holder.imageView.setImageResource(imageLanguage);
         holder.tvLanguage.setText(language.getDisplayName());
-        holder.imageView.setImageResource(language.getImage());
-        holder.rbIsChecked.setChecked(language.getStatus());
+        holder.rbIsChecked.setChecked(language.isStatus());
     }
 
     @Override
