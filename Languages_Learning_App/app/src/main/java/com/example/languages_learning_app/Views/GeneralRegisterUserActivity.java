@@ -118,8 +118,8 @@ public class GeneralRegisterUserActivity extends AppCompatActivity implements Vi
                                     .setFullName(fullName)
                                     .setEmail(email)
                                     .setPhone(phone)
+                                    .setActive(true)
                                     .build();
-
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(userId)
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
